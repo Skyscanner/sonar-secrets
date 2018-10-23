@@ -91,6 +91,10 @@ if (AWS_ACCESS_KEY_ID == keystore['DECRYPTED']['AWS_ACCESS_KEY_ID'] || AWS_SECRE
 if (AWS_SESSION_TOKEN == '') {} // Complian
 if (AWS_SESSION_TOKEN == keystore['DECRYPTED']['AWS_SESSION_TOKEN']) {} // Compliant
 require('app/organizations/preferences/controller').name; // Compliant
+var role = 'arn:aws:iam::123456789000:role/role-name'; // Compliant
+let elastic = "arn:aws:elasticbeanstalk:us-east-1:123456789000:environment/app/MyEnvironment"; // Compliant
+const rds = 'arn:aws:rds:eu-west-4:123456789000:db:mysql-db'; // Compliant
+class Cloud { static S3 = 'arn:aws:s3:::my_corporate_bucket/exampleobject.png'; } // Compliant
 
 var aws_id = 'AKIEHI385HKH1IWUQEEN'; // Noncompliant
 let aws_key = "PA3XsxZ8d8cPQLmnZzVhaRdzC6ND2a8vhbyXU/Dw"; // Noncompliant
@@ -107,7 +111,3 @@ var credentials = {'AWS_SESSION_TOKEN': 'FQoDYXdzELv//////////wEldj3948yOJRO84jg
 if (AWS_ACCESS_KEY_ID == 'AKIEHI385HKH1IWUQEEN') {} // Noncompliant
 if (AWS_SECRET_ACCESS_KEY == "PA3XsxZ8d8cPQLmnZzVhaRdzC6ND2a8vhbyXU/Dw") {} // Noncompliant
 if (AWS_SESSION_TOKEN == 'FQoDYXdzELv//////////wEldj3948yOJRO84jgpoip239232hEOHhfkjhefkwue97jorhfiuh+XjFC9Je/YG7JCqKjrspab2lB+7/Fb1NJFjgwur47Dbhs/L7nh+/VGnwLoAo8CIqoPBLRmXItaoiuuofZnr+ktihZk1Yi55sYZ12hfRMPVbDmhf9Ke683+e9bJirhUEghw9424JOhgwrgqq99MvzCEFe4eXPOSgAcQcD2xqnnKO738tjhoh23HFqjflhefibWegfqefgqUF12hvgfwegqf') {} // Noncompliant
-var role = 'arn:aws:iam::123456789000:role/role-name'; // Noncompliant
-let elastic = "arn:aws:elasticbeanstalk:us-east-1:123456789000:environment/app/MyEnvironment"; // Noncompliant
-const rds = 'arn:aws:rds:eu-west-4:123456789000:db:mysql-db'; // Noncompliant
-class Cloud { static S3 = 'arn:aws:s3:::my_corporate_bucket/exampleobject.png'; } // Noncompliant
