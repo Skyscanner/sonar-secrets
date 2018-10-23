@@ -48,7 +48,6 @@ public class AWSCredentials extends IssuableSubscriptionVisitor {
     private static final Pattern AWS_ACCESS_KEY_ID = Pattern.compile("(?=.*[A-Z])(?=.*[0-9])[A-Z0-9]{20}");
     private static final Pattern AWS_SECRET_ACCESS_KEY = Pattern.compile("(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9+/]{40}", Pattern.CASE_INSENSITIVE);
     private static final Pattern AWS_SESSION_TOKEN = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])[A-Za-z0-9+/]{270,290}", Pattern.CASE_INSENSITIVE);
-    private static final Pattern AWS_ARN = Pattern.compile("arn:[\\w\\d\\-_]+:[\\w\\d\\-_]+:[\\w\\d\\-_]*:[\\w\\d\\-_]*:.+", Pattern.CASE_INSENSITIVE);
 
     private void validate(Tree tree, String variable, String value) {
         variable = Utils.trimQuotes(variable.toLowerCase());
@@ -61,8 +60,6 @@ public class AWSCredentials extends IssuableSubscriptionVisitor {
                 if (Entropy.getShannonEntropy(value) > 4.5) {
                     reportIssue(tree, "Hardcoded AWS secrets can be abused to gain unauthorized access to the shared cluster and/or the VPC.");
                 }
-            } else if (AWS_ARN.matcher(value).matches()) {
-                reportIssue(tree, "Hardcoded AWS secrets can be abused to gain unauthorized access to the shared cluster and/or the VPC.");
             }
         }
     }

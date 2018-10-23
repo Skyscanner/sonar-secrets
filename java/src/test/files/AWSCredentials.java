@@ -70,6 +70,10 @@ class AWSCredentialsTestMock {
         if (AWS_SESSION_TOKEN == "") {} // Complian
         if (AWS_SESSION_TOKEN == secretsLoader.getSecret("API")) {} // Compliant
         require("app/organizations/preferences/controller"); // Compliant
+        String role = "arn:aws:iam::123456789000:role/role-name"; // Compliant
+        String elastic = "arn:aws:elasticbeanstalk:us-east-1:123456789000:environment/app/MyEnvironment"; // Compliant
+        final String rds = "arn:aws:rds:eu-west-4:123456789000:db:mysql-db"; // Compliant
+        final String S3 = "arn:aws:s3:::my_corporate_bucket/exampleobject.png"; // Compliant
     }
 
     private void test_noncompliant() {
@@ -84,10 +88,6 @@ class AWSCredentialsTestMock {
         if (AWS_ACCESS_KEY_ID == "AKIEHI385HKH1IWUQEEN") {} // Noncompliant
         if (AWS_SECRET_ACCESS_KEY == "PA3XsxZ8d8cPQLmnZzVhaRdzC6ND2a8vhbyXU/Dw") {} // Noncompliant
         if (AWS_SESSION_TOKEN == "FQoDYXdzELv//////////wEldj3948yOJRO84jgpoip239232hEOHhfkjhefkwue97jorhfiuh+XjFC9Je/YG7JCqKjrspab2lB+7/Fb1NJFjgwur47Dbhs/L7nh+/VGnwLoAo8CIqoPBLRmXItaoiuuofZnr+ktihZk1Yi55sYZ12hfRMPVbDmhf9Ke683+e9bJirhUEghw9424JOhgwrgqq99MvzCEFe4eXPOSgAcQcD2xqnnKO738tjhoh23HFqjflhefibWegfqefgqUF12hvgfwegqf") {} // Noncompliant
-        String role = "arn:aws:iam::123456789000:role/role-name"; // Noncompliant
-        String elastic = "arn:aws:elasticbeanstalk:us-east-1:123456789000:environment/app/MyEnvironment"; // Noncompliant
-        final String rds = "arn:aws:rds:eu-west-4:123456789000:db:mysql-db"; // Noncompliant
-        final String S3 = "arn:aws:s3:::my_corporate_bucket/exampleobject.png"; // Noncompliant
         // already in a class
     }
 }
