@@ -1,10 +1,14 @@
 # SonarQube™ Secrets plugin
 
 [![](https://github.com/Skyscanner/sonar-secrets/workflows/build/badge.svg)](https://github.com/Skyscanner/sonar-secrets/actions)
+[![](https://img.shields.io/badge/Java-8-red)](https://img.shields.io/badge/Java-8-red)
+
 
 `Sonar Secrets` plugin for SonarQube™ is designed to identify hardcoded secrets such as passwords, API keys, AWS credentials, tokens, etc. In line with best security practices it is recommended to use a credentials store (such as credstash or Vault) to contain all secrets, and refer to these using identifiers, such that the source code will never contain any cleartext secret.
 
 This plugin supports Java and JavaScript.
+
+**Requirement:** Java 8
 
 # Installation Guide
 ### Build
