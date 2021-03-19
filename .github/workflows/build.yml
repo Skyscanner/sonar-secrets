@@ -24,6 +24,9 @@ jobs:
         java-version: ${{ matrix.java-version }}
         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
         architecture: x86 # (x64 or x86) - defaults to x64
-    - name: Build
+    - name: sonar-secrets-java
       run: |
-        make build
+        make build-java-jar
+    - name: sonar-secrets-javascript
+      run: |
+        make build-javascript-jar
