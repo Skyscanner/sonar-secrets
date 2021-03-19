@@ -14,7 +14,7 @@ jobs:
       matrix:
         java-version: [ 8 ]
 
-    name: Java ${{ matrix.java-version }} sample
+    name: Java ${{ matrix.java-version }}
 
     steps:
     - uses: actions/checkout@v2
