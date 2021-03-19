@@ -14,7 +14,7 @@
 
 	<properties>
 		<javascript.version>3.0.0.4962</javascript.version>
-		<sonar.version>6.2</sonar.version>
+		<sonar.version>8.7.1.42226</sonar.version>
 	</properties>
 	<dependencies>
 		<dependency>
