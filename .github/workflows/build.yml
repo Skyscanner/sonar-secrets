@@ -25,9 +25,9 @@ jobs:
         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
         architecture: x86 # (x64 or x86) - defaults to x64
     - name: sonar-secrets-java
-      shell: bash {0}
       run: |
         make build-java-jar
+      shell: bash {0}
     - name: sonar-secrets-javascript
       run: |
         make build-javascript-jar
