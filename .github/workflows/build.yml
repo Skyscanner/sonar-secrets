@@ -15,7 +15,7 @@ jobs:
         java-version: [ 8 ]
         package: [ "java", "javascript" ]
 
-    name: Java ${{ matrix.java-version }}
+    name: Build ${{ matrix.package }} package (Java ${{ matrix.java-version }})
 
     steps:
     - uses: actions/checkout@v2
