@@ -15,7 +15,7 @@ jobs:
         java-version: [ 8 ]
         package: [ "java", "javascript" ]
 
-    name: Build ${{ matrix.package }} package (Java ${{ matrix.java-version }})
+    name: sonar-secrets-${{ matrix.package }} (Java ${{ matrix.java-version }})
 
     steps:
     - uses: actions/checkout@v2
@@ -25,6 +25,6 @@ jobs:
         java-version: ${{ matrix.java-version }}
         java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
         architecture: x86 # (x64 or x86) - defaults to x64
-    - name: Build ${{ matrix.package }} package
+    - name: Build sonar-secrets-${{ matrix.package }}
       run: |
         make build-${{ matrix.package }}-jar
