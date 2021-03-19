@@ -1,0 +1,23 @@
+name: build
+
+jobs:
+  build:
+
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        java-version: [ 8 ]
+
+    name: Java ${{ matrix.java-version }} sample
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Java ${{ matrix.java-version }}
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.java-version }}
+        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+        architecture: x86 # (x64 or x86) - defaults to x64
+    - name: Build
+      run: |
+        make build
