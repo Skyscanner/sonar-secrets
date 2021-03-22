@@ -104,7 +104,7 @@
       <plugin>
         <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
         <artifactId>sonar-packaging-maven-plugin</artifactId>
-        <version>1.17</version>
+        <version>1.20.0.405</version>
         <extensions>true</extensions>
         <configuration>
           <!-- the entry-point class that extends org.sonar.api.SonarPlugin -->
