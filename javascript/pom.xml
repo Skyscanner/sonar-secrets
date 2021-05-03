@@ -13,7 +13,7 @@
 	<inceptionYear>2018</inceptionYear>
 
 	<properties>
-		<javascript.version>7.3.0.15071</javascript.version>
+		<javascript.version>7.4.1.15483</javascript.version>
 		<sonar.version>6.2</sonar.version>
 	</properties>
 	<dependencies>
